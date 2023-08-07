@@ -1,0 +1,27 @@
+{% extends 'orders/base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+
+    <!-- Page Content  -->
+    
+        <h2 class="text-center">Orders List</h2>
+        <br>
+        <div>
+            <ul>
+                {% for x in myorders %}
+                <li>
+                    {{x.order_number}} {{x.delivered_to}}
+                    {{x.truck_number}} {{x.delivery_date}}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+<!-- Your original HTML content goes here -->
+{% endblock %}
