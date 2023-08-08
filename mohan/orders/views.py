@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import order
-from .forms import OrderForm
 
 def orders(request):
     myorders = order.objects.all().values()
@@ -13,6 +12,32 @@ def orders(request):
     return HttpResponse(template.render(context,request))
 # Create your views here.
 
+# shoe order page
+def shoe_orders(request):
+    myorders = order.objects.all().values()
+    template = loader.get_template('orders/shoe.html')
+    context = {
+        'myorders': myorders,
+    }
+    return HttpResponse(template.render(context,request))
+
+# EVA Order Page
+def eva_orders(request):
+    myorders = order.objects.all().values()
+    template = loader.get_template('orders/eva.html')
+    context = {
+        'myorders': myorders,
+    }
+    return HttpResponse(template.render(context,request))
+
+#PVC Order Page
+def pvc_orders(request):
+    myorders = order.objects.all().values()
+    template = loader.get_template('orders/pvc.html')
+    context = {
+        'myorders': myorders,
+    }
+    return HttpResponse(template.render(context,request))
 def orderForm(request):
     if request.method == 'POST':
         order_num = request.POST['order']

@@ -13,3 +13,4 @@ class order(models.Model):
     delivery_date = models.DateField(default=date(2023,8,7))
     #delivery_date = models.DateField(widget = DateInput)
 
+

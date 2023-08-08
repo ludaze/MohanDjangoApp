@@ -2,14 +2,11 @@
 
 {% load static %}
 
-
-
 {% block content %}
 
 
 <!-- Page Content  -->
-
-<h2 class="text-center">Order Confirmation Form</h2>
+<h2 class="text-center"> Delivery Note</h2>
 <br>
 
 <form class="form-horizontal">
@@ -19,7 +16,7 @@
       <div class="col-sm-8">
         <input type="text" class="form-control">
       </div>
-    </div>
+    </div> 
 
     <div class="form-group">
       <label class="control-label col-sm-4">Delivered To</label>
@@ -52,7 +49,7 @@
       <div class="col-sm-8">
         <input type="text" class="form-control">
       </div>
-    </div>
+    </div> 
 
     <div class="form-group">
       <label class="control-label col-sm-4">Invoice Number</label>
@@ -62,15 +59,22 @@
     </div>
 
   </div>
+ <!--  <form id="rangeForm">
+        <label class="col-sm-4 control-label" for="startNumber">Start Number:</label>
+        <input class="form-control" type="number" id="startNumber" name="startNumber" required>
+        
+        <label for="endNumber">End Number:</label>
+        <input type="number" id="endNumber" name="endNumber" required>
+        
+        <button type="button" onclick="submitRange()">Submit Range</button>
+    </form> -->
   <div class="col-sm-6">
     <div class="form-group">
-      <label class="control-label col-sm-4">Size</label>
-      <div class="col-sm-6 input-container">
-        <input class="form-control" type="number" id="startNumber" name="startNumber" required>
-        <input class="form-control" type="number" id="endNumber" name="endNumber" required>
-
+        <label class="control-label col-sm-4">Number of Bags</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control">
+        </div>
       </div>
-    </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4">Quantity</label>
@@ -89,35 +93,49 @@
     </div>
   </div>
 
-
-  <div class="col-sm-6">
+  <div class="col-sm-12">
     <div class="form-group">
-      <label class="col-sm-4 control-label">Deliver Date</label>
-      <div class="col-sm-8">
-        <input type="text" class="date-start ml-5 form-control datepicker" placeholder="Date Start">
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label class="col-sm-4 control-label">Contract Expiry Date</label>
-      <div class="col-sm-8">
-        <input type="text" class="date-end ml-5 form-control datepicker col-sm-8" placeholder="Date End">
-      </div>
+      <label class="control-label col-sm-2">Stock Details</label>
+      
     </div>
   </div>
 
 
-
-  <!-- <div class="col-sm-6">
+  <div class="col-sm-6">
     <div class="form-group">
-      <label class="col-sm-4 control-label">Deposit Amount</label>
-      <div class="col-sm-8">
+      <label class="col-sm-4 control-label">Today Delivery</label>
+    <div class="col-sm-8">
         <input type="text" class="form-control">
       </div>
     </div>
-  </div> -->
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Balance</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control balance-input" value="50" readonly>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Previous Delivery Number</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control balance-input" value="80050" readonly>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Current Balance</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control balance-input" value="20" readonly>
+      </div>
+    </div>
+  </div>
 
 </form>
 

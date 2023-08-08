@@ -24,13 +24,15 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="shoe.html">Shoes</a>
+                            <a href="{% url 'shoe_orders' %}">Shoes</a>
+
+                            <!-- <a href="shoe.html">Shoes</a> -->
                         </li>
                         <li>
-                            <a href="EVA.html">EVA</a>
+                            <a href="{% url 'eva_orders' %}">EVA</a>
                         </li>
                         <li>
-                            <a href="PVC.html">PVC</a>
+                            <a href="{% url 'pvc_orders' %}">PVC</a>
                         </li>
                     </ul>
                 </li>
@@ -72,6 +74,11 @@
                 </div>
             </nav>
             {% block content %}{% endblock %}
+
+            <button type="button"  class="btn btn-info " style="display:block;">
+                <i class="fas fa-align-left"></i>
+                Submit
+            </button>
         </div>
       
     </div>
