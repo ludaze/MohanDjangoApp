@@ -7,13 +7,16 @@ class DateInput(forms.DateInput):
 
 # Create your models here.
 class order(models.Model):
-    order_number = models.CharField(max_length=20, unique=True)
+    order_number = models.AutoField( primary_key=True)
+    invoice_number = models.CharField(max_length=30,null=True)
     order_date = models.DateField(default=date(2023,8,7))
     customer_name = models.CharField(max_length=30, null=True)
-    payment = models.SmallIntegerField(null=True)
-    advance_amount = models.SmallIntegerField(null=True)
-    invoice_number = models.CharField(max_length=30,null=True)
-    price = models.IntegerField(null=True)
+    #payment = models.SmallIntegerField(null=True)
+    quantity = models.IntegerField(null=True)
+    deposit_amount = models.FloatField(null=True)
+    price_per_item = models.FloatField(null=True)
+    total_price = models.FloatField(null=True)
+    desc = models.CharField(max_length=50,null=True)
     #delivery_date = models.DateField(widget = DateInput)
 
 class DeliveryNote(models.Model):
