@@ -15,8 +15,8 @@
             <ul>
                 {% for x in myorders %}
                 <li>
-                    {{x.order_number}} {{x.delivered_to}}
-                    {{x.truck_number}} {{x.delivery_date}}
+                    {{x.order_number}} {{x.customer_name}}
+                     {{x.order_date}}
                 </li>
                 {% endfor %}
             </ul>

@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = order
         widgets = {'my_date_field': DateInput}
-        #fields = ['order_number', 'delivered_to','truck_number','delivery_date'
+        #fields = ['order_number', 'customer_name','truck_number','delivery_date'
         fields = '__all__'
         widgets = {
             'delivery_date': forms.DateInput(

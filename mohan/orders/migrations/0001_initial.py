@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('order_number', models.SmallIntegerField()),
-                ('delivered_to', models.CharField(max_length=30)),
+                ('customer_name', models.CharField(max_length=30)),
                 ('truck_number', models.SmallIntegerField()),
                 ('delivery_date', models.DateField()),
             ],

@@ -5,9 +5,16 @@ from .models import order
 
 def orders(request):
     myorders = order.objects.all().values()
-    template = loader.get_template('orders/customers.html')
+    last_order = order.objects.last()
+    if last_order:
+        next_order_number = int(last_order.order_number) + 1
+    else:
+        next_order_number = 1
+
+    template = loader.get_template('orders/order.html')
     context = {
         'myorders': myorders,
+        'next_order_number': next_order_number
     }
     return HttpResponse(template.render(context,request))
 # Create your views here.
@@ -42,10 +49,10 @@ def orderForm(request):
     if request.method == 'POST':
         order_num = request.POST['order']
         customer = request.POST['customer']
-        truck_num = request.POST['truck']
-        delivery_date = request.POST['dates']
+       # truck_num = request.POST['truck']
+        order_date = request.POST['dates']
 
-        new_order = order(order_number= order_num, delivered_to = customer, truck_number = truck_num, delivery_date = delivery_date)
+        new_order = order(order_number= order_num, customer_name = customer, order_date = order_date)
         new_order.save()
 
 
